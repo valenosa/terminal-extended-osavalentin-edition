@@ -34,8 +34,8 @@
   <div class="posts">
       <ul>
         {{ range .Paginator.Pages }}
-          {{ if .Description }}
-            <li>{{ .Date.Format "2006-01-02" }} <a class="post-link" href="{{.RelPermalink}}">{{ .Title | markdownify }} :: {{ .Description | markdownify }}</a></li>
+          {{ if $.Site.Params.ListDateFormat }}
+            <li>{{ .Date.Format $.Site.Params.ListDateFormat }} <a class="post-link" href="{{.RelPermalink}}">{{ .Title | markdownify }}</a></li>
           {{ else }}
             <li>{{ .Date.Format "2006-01-02" }} <a class="post-link" href="{{.RelPermalink}}">{{ .Title | markdownify }}</a></li>
           {{ end }}
