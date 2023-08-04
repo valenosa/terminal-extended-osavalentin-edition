@@ -19,6 +19,29 @@
   width: 100%;
 }
 
+@mixin page-title {
+  $border: 3px dotted $accent;
+  position: relative;
+  color: $accent;
+  margin: 0 0 15px;
+  padding-bottom: 15px;
+  border-bottom: $border;
+  font-size: 1.5em;
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    display: block;
+    width: 100%;
+    border-bottom: $border;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
 .post {
   width: 100%;
   text-align: left;
@@ -44,25 +67,7 @@
   }
 
   &-title {
-    $border: 3px dotted $accent;
-    position: relative;
-    color: $accent;
-    margin: 0 0 15px;
-    padding-bottom: 15px;
-    border-bottom: $border;
-
-    &:after {
-      content: '';
-      position: absolute;
-      bottom: 2px;
-      display: block;
-      width: 100%;
-      border-bottom: $border;
-    }
-
-    a {
-      text-decoration: none;
-    }
+    @include page-title;
   }
 
   &-tags {
@@ -102,6 +107,13 @@
       color: $accent;
     }
   }
+}
+
+.page-title {
+  @include page-title;
+  width: 100%;
+  margin: 20px auto;
+  padding: 20px 0px 15px 0px;
 }
 
 .post--regulation {
