@@ -14,13 +14,13 @@
 <div id="links">
     {{ range $ListData.List }}
         {{if eq (.Type) "text" }} 
-        <div class="textContainer desktopOnly">
-            <p>{{ .Content | markdownify }}</p>
+        <div class="textContainer {{.HtmlClasses}}">
+            <p>{{ .Content | safeHTML | markdownify }}</p>
         </div>
         {{ else if eq .Type "link" }}
         <div class="linkContainer">
             <a class="link" href="{{ .Link }}" target="_blank">
-                <div class="linkIconContainer">
+                <div class="linkIconContainer {{.HtmlClasses}}">
                     <img class="icon" src="{{ .Icon }}" alt="{{ .AltText }}">
                 </div>
                 <p class="linkText">{{ .Content }}</p>
