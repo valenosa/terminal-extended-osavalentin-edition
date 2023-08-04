@@ -4,44 +4,8 @@
   </h1>
 
   {{ if eq (.Params.isPortfolio) true }}
-  {{ with .Content }}
-  <div class="index-content">
-    {{ . }}
-  </div>
-  {{ end }}
-    {{ if .Sections }}
-      {{ range sort .Sections ".Weight"}}
-      <h2>{{.CurrentSection.Title}}</h2>
-      <div class="portfolio-grid">
-        {{ range .Data.Pages }}
-          {{ partial "portfolio_item.html" . }}
-        {{ end }}
-      </div>
-      {{ end }}
-    {{ else }}
-      <div class="portfolio-grid">
-      {{ range .Pages }}
-        {{ partial "portfolio_item.html" . }}
-      {{ end }}
-      </div>
-    {{ end }}
+    {{ partial "portfolio-list.html" . }}
   {{ else }}
-  {{ with .Content }}
-  <div class="index-content">
-    {{ . }}
-  </div>
-  {{ end }}
-  <div class="posts">
-      <ul>
-        {{ range .Paginator.Pages }}
-          {{ if $.Site.Params.ListDateFormat }}
-            <li>{{ .Date.Format $.Site.Params.ListDateFormat }} <a class="post-link" href="{{.RelPermalink}}">{{ .Title | markdownify }}</a></li>
-          {{ else }}
-            <li>{{ .Date.Format "2006-01-02" }} <a class="post-link" href="{{.RelPermalink}}">{{ .Title | markdownify }}</a></li>
-          {{ end }}
-        {{ end }}
-      </ul>
-    {{ partial "pagination.html" . }}
-  </div>
+    {{ partial "post-list.html" . }}
   {{ end }}
 {{ end }}
