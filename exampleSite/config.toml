@@ -1,6 +1,6 @@
 baseurl = "https://example.com/"
 languageCode = "en-us"
-theme = "hugo-theme-terminal"
+theme = "hugo-theme-terminal-portfolio"
 paginate = 5
 
 [params]
@@ -33,3 +33,7 @@ paginate = 5
         identifier = "showcase"
         name = "Showcase"
         url = "/showcase"
+      [[languages.en.menu.main]]
+        identifier = "portfolio"
+        name = "Portfolio"
+        url = "/portfolio"

@@ -1,12 +1,39 @@
 {{ define "main" }}
+  {{ if eq (.Params.isPortfolio) true }}
+  <h1 class="post-title">
+    <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
+  </h1>
   {{ with .Content }}
-    <div class="index-content">
-      {{ . }}
-    </div>
+  <div class="index-content">
+    {{ . }}
+  </div>
+  {{ end }}
+    {{ if .Sections }}
+      {{ range sort .Sections ".Weight"}}
+      <h2>{{.CurrentSection.Title}}</h2>
+      <div class="portfolio-grid">
+        {{ range .Data.Pages }}
+          {{ partial "portfolio_item.html" . }}
+        {{ end }}
+      </div>
+      {{ end }}
+    {{ else }}
+      <div class="portfolio-grid">
+      {{ range .Pages }}
+        {{ partial "portfolio_item.html" . }}
+      {{ end }}
+      </div>
+    {{ end }}
+  {{ else }}
+  {{ with .Content }}
+  <div class="index-content">
+    {{ . }}
+  </div>
   {{ end }}
   <div class="posts">
     {{ range .Paginator.Pages }}
-      <article class="post on-list">
+     <article class="post on-list">
+      <div class="post on-list">
         <h1 class="post-title">
           <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
         </h1>
@@ -53,4 +80,5 @@
 
     {{ partial "pagination.html" . }}
   </div>
+  {{ end }}
 {{ end }}
