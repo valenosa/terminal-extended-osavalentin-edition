@@ -19,7 +19,7 @@
         </div>
         {{ else if eq .Type "link" }}
         <div class="linkContainer">
-            <a class="link" href="{{ .Link }}" target="_blank">
+            <a class="link" href="{{ .Link }}" {{ if .OpenNewTab }} target="_blank" {{ end }}>
                 <div class="linkIconContainer {{.HtmlClasses}}">
                     <img class="icon" src="{{ .Icon }}" alt="{{ .AltText }}">
                 </div>
