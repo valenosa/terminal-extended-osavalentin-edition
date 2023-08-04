@@ -3,7 +3,7 @@
     <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
   </h1>
 
-  {{ if eq (.Params.isPortfolio) true }}
+  {{ if eq (.Params.Type) "portfolio" }}
     {{ partial "portfolio-list.html" . }}
   {{ else }}
     {{ partial "post-list.html" . }}
