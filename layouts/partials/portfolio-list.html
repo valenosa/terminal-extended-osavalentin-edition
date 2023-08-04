@@ -1,8 +1,3 @@
-{{ with .Content }}
-  <div class="index-content">
-    {{ . }}
-  </div>
-{{ end }}
 {{ if .Sections }}
     {{ range sort .Sections ".Weight"}}
       <h2>{{.CurrentSection.Title}}</h2>
