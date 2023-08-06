@@ -7,8 +7,10 @@
       <div class="copyright">
         <span>© {{ now.Year }} Powered by <a href="https://gohugo.io">Hugo</a></span>
     {{ end }}
-      <span>:: <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
-      </div>
+    {{ if not $.Site.Params.HideDefaultCredit }}
+      <span>:: <a href="https://github.com/Louisload/hugo-theme-terminal-extended" target="_blank">Theme</a>, a fork made by <a href="https://github.com/louisload" target="_blank">Louisload</a>, original by <a href="https://github.com/panr" target="_blank">panr</a></span>
+    {{ end }}  
+    </div>
   </div>
 </footer>
 

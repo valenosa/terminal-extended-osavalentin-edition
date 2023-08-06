@@ -2,7 +2,7 @@
 title = "Roundish Lisa"
 date = "2020-02-23"
 author = "Me"
-portfolioCover = "img/monalisa6.png"
+portfolioCover = "img/monalisa8.png"
 portfolioIcons=["icon/linux.svg"]
 +++
 

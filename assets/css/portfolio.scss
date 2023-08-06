@@ -4,7 +4,7 @@
 
   grid-template-columns: repeat( auto-fit, minmax(185px, 1fr) );
 
-  @media (--phone) {
+  @media ($phone) {
     grid-template-columns: repeat( auto-fit, minmax(150px, 1fr) );
   }
 }
