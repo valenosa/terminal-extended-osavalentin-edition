@@ -3,7 +3,7 @@
 This is the theme I use for my personal website.
 It is a fork of the amazing [Hugo theme named Terminal by panr](https://github.com/panr/hugo-theme-terminal), adding more features and some differences that I need.
 
-![Terminal Extended](https://github.com/Louisload/hugo-theme-terminal-extended/blob/master/images/links-list.png?raw=true)
+![Terminal Extended](https://github.com/Louisload/hugo-theme-terminal-extended/blob/master/images/links-list.jpg?raw=true)
 ![Terminal Extended](https://github.com/Louisload/hugo-theme-terminal-extended/blob/master/images/portfolio1.png?raw=true)
 
 #### Barebones demo - https://www.luisrodriguesalves.dev/hugo-theme-terminal-extended
