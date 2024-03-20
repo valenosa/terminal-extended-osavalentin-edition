@@ -1,5 +1,5 @@
 {{ $ListData := (index .Site.Data .Params.linkListData) }}
-<img id="userPhoto" src="{{ $ListData.Image | absURL }}" alt="User Photo">
+<img id="userPhoto" src="{{ $ListData.Image | absURL }}" alt="User Photo" style="width: 200px; height: 200px;">
 <p id="userName">{{ $ListData.Name }}</p>
 <p id="description">{{ $ListData.Description }}</p>
 
